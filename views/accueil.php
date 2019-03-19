@@ -23,7 +23,11 @@
 </head>
 <body>
     <div>
-        <input type="text" id="input_search" name="input_search" style="display: none;" >
+        <div id="div_input_search"  style="display: none;">
+            <!-- <input type="text" id="input_search" name="input_search" > -->
+            <input type="text" id="input_search" name="input_search">
+            <img id="img_search" src="../public/img/input_search.png">
+        </div>
             <div id="wrapper">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">

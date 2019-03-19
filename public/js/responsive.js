@@ -1,13 +1,15 @@
 $(document).on("click", "#search", function () {
-    $('#input_search').css('display', 'block');
+    
+    $('#div_input_search').css('display', 'flex');
     $("#input_search").focus();
 });
 
 $('body').click(function(evt){
-    if(evt.target.id == "input_search"){
+    
+    if(evt.target.id == "input_search" || evt.target.id == "img_search" ){
         return;
     }
     
-    $('#input_search').css('display', 'none');
+    $('#div_input_search').css('display', 'none');
     $('#input_search').val('');
 });
