@@ -1,12 +1,13 @@
 <?php
 
-namespace Controller;
+namespace controller;
+
+use \core\View;
 
 class AccueilController {
 	
-	public static function defaut(){
-        
-        echo 'Accueil';
-
+	public function defaut(){
+		
+		$view = new View('accueil');
 	}
 }

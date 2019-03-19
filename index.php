@@ -1,19 +1,12 @@
 <?php
+/*
+- L'autoloader : Charge automatiquement une classe PHP même si dans le code cette dernières n'est
+ pas incluse de façon précise.
+- Système de routing par entonoir
+*/
+//L'ouverture de la session PHP
+session_start();
 
-ob_start();
-
-// Chemin absolu *** ROOT => racine du dossier ***
-define('ROOT', realpath(__DIR__).DIRECTORY_SEPARATOR);
-
-// Mise en forme de la date
-date_default_timezone_set('Europe/Paris');
-setlocale(LC_TIME, 'fr_FR', 'fra');
-
-// Acquisition paramètres URL
-$controllerName = ucfirst($_GET['controller']);
-$methodName = $_GET['method'];
-
-/* ------ METHODES DE BASE ------ */
 function debug($value, $die = false, $type = 1) {
     if ($type == 1) {
         echo '<pre>';
@@ -29,60 +22,66 @@ function debug($value, $die = false, $type = 1) {
     }
 }
 
-// Préchargement des dépendances des fichiers
-function myAutoload($class){
-	//charge automatiquement les classes lors de l'invocation
-	$className = str_replace("\\", "/", $class);
-	if (file_exists($className . '.php')) {
-		require_once "$className.php";		
-		return true;
-	}
-	return false;
-}
-spl_autoload_register('myAutoload');
-
-function displayError($err){
-    if( defined( DISP_ERROR )){	
-		if( DISP_ERROR == 'ERR' ){
-			echo '<fieldset style="width: 66%;">
-			  <legend><b>[</b>PHP PDO Error ' . strval($err->getCode()) . '<b>]</b></legend>
-			  <table border="0">
-					<tr>
-						<td align="right"><b>Message:</b></td>
-						<td>' . $err->getMessage() . '</td>
-					</tr>
-					<tr>
-						<td align="right"><b>Code:</b></td>
-						<td>' . strval($err->getCode()) . '</td>
-					</tr>
-					<tr>
-						<td align="right"><b>File:</b></td>
-						<td>' . $err->getFile() . '</td>
-					</tr>
-					<tr>
-						<td align="right"><b>Line:</b></td>
-						<td>' . strval($err->getLine()) . '</td>
-					</tr>
-				</table>
-				</fieldset>';
-		}
-	}
+/* =====  L'AUTOLOADER  =====  */
+function autoloader($class){
+   $class = $class .".php";
+   
+   if( file_exists($class) ){
+       include $class;
+   }else if ( file_exists($class) ){
+       include $class;
+   }
 }
 
-// Définition de la source de la class
-$controllerClass = "/controller/$controllerName";
-if(!file_exists( $controllerClass.'.php' )){
-	$controllerClass = "/controller/$controllerName";
-}
+spl_autoload_register("autoloader");
+/* =====  LE SYSTEME DE ROUTING DES VUES  =====  */
 
-session_start();
 
-try{
-	$class = new ReflectionClass(str_replace('/','\\', $controllerClass));
-	$instance = $class->newInstance();
-	$method = $class->getMethod($methodName);
-	$method->invoke($instance);
-} catch (Exception $err){
-	echo 'Erreur';
-	exit();
+
+//L'entonoir de requête HTTP
+//On récupère uniquement l'URI de l'URL
+$uri = substr(urldecode($_SERVER["REQUEST_URI"]), strlen(dirname($_SERVER["SCRIPT_NAME"])));
+$uri = ltrim($uri, "/");//Supprime les caractères spéciaux , espaces et autres..
+$uri = explode("?", $uri);
+$uriExploded = explode("/", $uri[0]);
+
+
+//Séparer l'URI via les '/' pour distinguer le contrôleur(c) et l'action de ce dernier(a)
+//S'assurer qu'elles ne sont pas vides autrement c'est l'index qui nous redirigera.
+$c = (empty($uriExploded[0]))?"index":$uriExploded[0];
+$a = (empty($uriExploded[1]))?"index":$uriExploded[1];
+//Suffixage des noms du contrôleur et de son action
+$c = ucfirst(strtolower($c))."Controller";
+$a = strtolower($a)	;
+
+
+
+//Suppression de nom du C et de l'A pour garder slmt la valeur soumise /user/single/3 -> 3
+unset($uriExploded[0]);
+unset($uriExploded[1]);
+$uriExploded = array_values($uriExploded);
+//Listes des types de méthodes + URI
+$params = ["POST"=>$_POST,"GET"=>$_GET,"URL"=>$uriExploded];
+
+//Entonoir des fichiers , classes et des méthodes
+if(file_exists("controller/".$c.".php")){
+
+   include "controller/".$c.".php";
+   
+	$tt ="\controller\\" ;
+	
+	$tt = $tt. $c;
+
+   if( class_exists($tt) ){
+	   $objC = new $tt();
+       if( method_exists($objC, $a) ){
+           $objC->$a($params);
+       }else{
+           die("L'action ".$a." n'existe pas");
+       }
+   }else{
+       die("Le controller ".$c." n'existe pas");
+   }
+}else{
+   die("Le fichier ".$c." n'existe pas");
 }
