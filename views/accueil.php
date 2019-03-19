@@ -9,17 +9,14 @@
     <title><?php echo $title; ?> </title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="public/bootstrap/css/bootstrap.min.css" />
-
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="public/css/simple-sidebar.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css" />
 
     <!-- Mon style.css -->
-    <link rel="stylesheet" type="text/css" href="public/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css" rel="stylesheet" />
 
-    <script src="public/jquery/jquery.min.js"></script>
+    <script src="../public/jquery/jquery.min.js"></script>
 
-    <script src="public/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../public/bootstrap/js/bootstrap.bundle.js"></script>
 
 </head>
 <body>
@@ -28,46 +25,49 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
+                    <!-- Img -->
                     <a href="#">
                         Logo
                     </a>
                 </li>
+                <br />
                 <li>
-                    <a href="#">Fil d'actualité</a>
+                  <!--<img src="">--><a href="#">Tous les sports</a>
                 </li>
-                <li class="sidebar-brand">
-                  <a href="#">Votre profil</a>
+                <li>
+                  <!--<img src="">--><a href="#">Football</a>
 
                 </li>
                 <li>
-                    <a href="#">Vos abonnées</a>
+                    <!--<img src="">--><a href="#">Rugby</a>
                 </li>
                 <li>
-                    <a href="#">Vos abonnements</a>
-                </li>
-                <li>
-                    <a href="#">Mon compte</a>
-                </li>
-                <li>
-                    <a href="#">Aide</a>
+                    <!--<img src="">--><a href="#">Basket</a>
                 </li>
             </ul>
         </div>
         
         <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-
-        <div class="container-fluid" id="page-content-wrapper">
-            <?php
-                include_once( "views/".$this->v );
-              ?>
-        </div>
-        <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
     
+    <div >
+        Bulles
+        <!-- TODO : BULLES D3J -->
+    </div>
+    <div style="display: none;">
+        <ul class="sidebar-nav">
+            <li>
+                <p>Article n°1</p><h3>Title</h3><img>
+            </li>
+            <li>
+                <p>Article n°2</p><h3>Title</h3><img>
+            </li>
+        </ul>
+    </div>
+
+
     <!-- Menu Toggle Script -->
     <script>
         $("#menu-toggle").click(function(e) {
