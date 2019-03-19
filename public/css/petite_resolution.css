@@ -57,4 +57,9 @@
         height: 20px;
     }
 
+    #input_search{
+        position: fixed;
+        left: 0px;
+        bottom: 50px;
+    }
 }

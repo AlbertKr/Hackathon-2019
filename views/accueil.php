@@ -22,46 +22,49 @@
 
 </head>
 <body>
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li id="logo_display" class="sidebar-brand">
-                    <a href="#">
-                        Logo
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <i class="icon"><img src="../public/img/search.png"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <i class="icon"><img src="../public/img/all.png"></i>
-                        <p class="label_responsive">Tous les sports</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon"><img src="../public/img/foot.png"></i>
-                        <p class="label_responsive">Football</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <i class="icon"><img src="../public/img/rugby.png"></i>
-                        <p class="label_responsive">Rugby</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <i class="icon"><img src="../public/img/basket.png"></i>
-                        <p class="label_responsive">Basket</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <div>
+        <input type="text" id="input_search" name="input_search" style="display: none;" >
+            <div id="wrapper">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li id="logo_display" class="sidebar-brand">
+                            <a href="#">
+                                Logo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="search">
+                            <i class="icon"><img src="../public/img/search.png"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="icon"><img src="../public/img/all.png"></i>
+                                <p class="label_responsive">Tous les sports</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon"><img src="../public/img/foot.png"></i>
+                                <p class="label_responsive">Football</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="icon"><img src="../public/img/rugby.png"></i>
+                                <p class="label_responsive">Rugby</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="icon"><img src="../public/img/basket.png"></i>
+                                <p class="label_responsive">Basket</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </div>
     
     <div >
@@ -79,4 +82,7 @@
         </ul>
     </div>
 </body>
+
+<script src="../public/js/responsive.js"></script>
+
 </html>
