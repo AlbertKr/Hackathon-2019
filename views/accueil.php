@@ -6,13 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $title; ?> </title>
+    <title>SportsSearch</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css" />
 
     <!-- Mon style.css -->
     <link rel="stylesheet" type="text/css" href="../public/css/style.css" rel="stylesheet" />
+    <!-- Pour ceux qui ont une résolution inférieure à 1024px -->    
+    <link rel="stylesheet" media="screen and (max-width: 1024px)" href="../public/css/petite_resolution.css" /> 
 
     <script src="../public/jquery/jquery.min.js"></script>
 
@@ -24,36 +26,46 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <!-- Img -->
+                <li id="logo_display" class="sidebar-brand">
                     <a href="#">
                         Logo
                     </a>
                 </li>
-                <br />
                 <li>
-                  <!--<img src="">--><a href="#">Tous les sports</a>
+                    <a href="#">
+                    <i class="icon"><img src="../public/img/search.png"></i>
+                    </a>
                 </li>
                 <li>
-                  <!--<img src="">--><a href="#">Football</a>
-
+                    <a href="#">
+                    <i class="icon"><img src="../public/img/all.png"></i>
+                        <p class="label_responsive">Tous les sports</p>
+                    </a>
                 </li>
                 <li>
-                    <!--<img src="">--><a href="#">Rugby</a>
+                    <a href="#">
+                        <i class="icon"><img src="../public/img/foot.png"></i>
+                        <p class="label_responsive">Football</p>
+                    </a>
                 </li>
                 <li>
-                    <!--<img src="">--><a href="#">Basket</a>
+                    <a href="#">
+                    <i class="icon"><img src="../public/img/rugby.png"></i>
+                        <p class="label_responsive">Rugby</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <i class="icon"><img src="../public/img/basket.png"></i>
+                        <p class="label_responsive">Basket</p>
+                    </a>
                 </li>
             </ul>
         </div>
-        
-        <!-- /#sidebar-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
     
     <div >
-        Bulles
+        <p>Bulles</p>
         <!-- TODO : BULLES D3J -->
     </div>
     <div style="display: none;">
@@ -66,14 +78,5 @@
             </li>
         </ul>
     </div>
-
-
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
 </body>
 </html>
