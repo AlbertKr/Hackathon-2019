@@ -23,12 +23,11 @@
 
 </head>
 <body>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 side">
                 <nav class="navbar">
-                    <a class="navbar-brand logo" href="#"><img width="30" height="30" src="../public/img/logo.svg"><strong>Sport</strong>Search</a>
+                    <a class="navbar-brand logo" href="defaut"><img width="35" height="35" src="../public/img/logo.svg"><strong>Sport</strong>Search</a>
                     <form class="navbar-form navbar-right inline-form" id="div_input_search_web">
                         <input type="text" id="input_search_web" name="input_search_web">
                         <img id="img_search" src="../public/img/input_search.png">
@@ -53,6 +52,9 @@
                 </div>
             </div>
             <div class="col-lg-10 main" id="article">
+                <div class="fond_blanc" style="display: flex;width: 100%;height: 100%;position: absolute;z-index: 1;align-content: center;justify-content: center;">
+                    <img src="../public/img/loading.gif" class=".dialog-animation" style="margin: auto;height: 50%;">
+                </div>
                 <div class="ensemble">
                     <div class="article col-lg-10">
                         <img src="../public/img/didi.png" class="imgArticle">
@@ -81,5 +83,24 @@
 </body>
 
 <script src="../public/js/responsive.js"></script>
+<script type="text/javascript">
+    $(document).on({
+        ajaxStart: function () {
+            $('.fond_blanc').css("display", "flex");
+            $('.fond_blanc').css("width", "100%");
+            $('.fond_blanc').css("height", "100%");
+            $('.fond_blanc').css("position", "absolute");
+            $('.fond_blanc').css("z-index", "1");
+            $('.fond_blanc').css("align-content", "center");
+            $('.fond_blanc').css("justify-content", "center");
+            $('.dialog-animation').css("height", "50%");
+            $('.dialog-animation').css("margin", "auto");
+        },
+        ajaxStop: function () {
+            $('.dialog-animation').css("display", "none");
+            $('.fond_blanc').css("display", "none");
+        }
+    });
+</script>
 
 </html>
