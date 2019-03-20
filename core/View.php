@@ -29,4 +29,9 @@ class View{
 	}
 
 
+	public function assign($key, $value){
+		$this->data[$key] = $value;
+	}
+
+
 }
