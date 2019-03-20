@@ -94,14 +94,6 @@
 
 dataset = {
         "children":   <?=json_encode($dataset)?> // don't forget to sanitize 
-
-
-    /*"children": [{"Name":"PSG","Count":4319},
-        {"Name":"Manchester","Count":4159},
-        {"Name":"Neymar","Count":2583},
-        {"Name":"Playoff","Count":2074},
-        {"Name":"Serena Williams","Count":1894},
-        {"Name":"FIFA","Count":1809}]*/
 };
 
 console.log(dataset);
@@ -143,10 +135,9 @@ node.append("circle")
     .attr("r", function(d) {
         return d.r;
     })
-    .style("fill", function(d,i) {
-        return color(i);
-    });
+    .style("fill", "#0054D2");
 
+//Le "mot" le plus mentionné
 node.append("text")
     .attr("dy", ".2em")
     .style("text-anchor", "middle")
@@ -159,7 +150,7 @@ node.append("text")
     })
     .attr("fill", "white");
 
-
+//Le nombre inscrit dans la bulle
 node.append("text")
     .attr("dy", "1.3em")
     .style("text-anchor", "middle")
@@ -171,6 +162,17 @@ node.append("text")
         return d.r/5;
     })
     .attr("fill", "white");
+
+ node.append("text")
+ .attr("x", 8)
+        .attr("y", ".31em")
+        .select("a")    
+        .attr("xlink:href", function (d) {
+            return "http://example.com/" + d.data.Link;
+        })
+        .text(function (d) {
+            return d.data.Name.substring(0, d.r / 3);
+        });
 
 
 
