@@ -3,13 +3,14 @@
 namespace controller;
 
 use \core\View;
-use \core\API;
 
+use \core\API;
 class AccueilController {
 	
 	public function defaut(){
 		
 		$view = new View('accueil');
+		
 		$api = new API();
 		$dataset = array();
 
@@ -20,9 +21,5 @@ class AccueilController {
 
 		$view->assign("data",$api->getMostMentionned()["ngrams"]);
 		$view->assign("dataset",$dataset);
-
-
-		
-
 	}
 }

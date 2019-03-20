@@ -1,0 +1,98 @@
+
+/* Nouvelles règles si la fenêtre fait au plus 1024px de large */
+@media screen and (max-width: 1024px)
+{
+    .navbar {
+       position:fixed;
+        left:0px;
+        bottom:0px;
+        height:8%;
+        width:100%;
+        background-color: #0054D2;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    
+    .menu{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    #article, #div_input_search_web{
+        display: none;
+    }
+
+    .logo{
+        display:none;
+    }
+    
+    .label_responsive{
+        display:none;
+    }
+
+    ul {
+        list-style-type : none;
+        margin-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    li {
+        display : inline-block;
+        width : 15%;
+        margin-left: 20px;
+    }
+
+    .side{
+        background: #EFEFEF;
+    }
+
+    .icon{
+        background-color: white;
+        border-radius: 10px;
+        font-size: 10px;
+        text-align: center;
+        margin-right: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .navbar-form{
+        display: none;
+    }
+
+    #search{
+        display: block;
+    }
+
+    #input_search{
+        border: 0px;
+        background: #F5F5F5;
+        height: 80%;
+    }
+
+    #div_input_search{
+        display: none;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        left: 0px;
+        bottom: 8%;
+        margin-bottom: 15px;
+        margin-left: 30px;
+        width: 60%;
+        height: 5%;
+        background: #F5F5F5;
+        border-radius: 100px;
+    }
+    
+}

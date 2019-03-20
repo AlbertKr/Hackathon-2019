@@ -27,11 +27,9 @@ class View{
 		//$name = "Yves"
 		include_once( "views/".$this->v );
 	}
-
-
+	
 	public function assign($key, $value){
 		$this->data[$key] = $value;
 	}
-
-
+	
 }
