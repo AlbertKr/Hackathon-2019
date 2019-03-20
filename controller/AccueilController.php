@@ -12,13 +12,14 @@ class AccueilController {
 		$view = new View('accueil');
 		$api = new API();
 		$dataset = array();
-
+		$i = 0; //Couleur
 		//La liste des données pour les bulles D3js
 		foreach($api->getMostMentionned()["ngrams"] as $data){
-			$dataset[]= array("Name"=>$data["ngram"],"Count"=>$data["count_articles"]); 
+			$dataset[]= array("Name"=>$data["ngram"],"Count"=>$data["count_articles"] ,"Link"=>"www.google.com","Color"=>"#0054D".$i); 
+			$i++;
 		}
-
-		$view->assign("data",$api->getMostMentionned()["ngrams"]);
+		//var_dump($api->getListByID());
+		$view->assign("data",$api->getArticlesByQuery());
 		$view->assign("dataset",$dataset);
 
 
