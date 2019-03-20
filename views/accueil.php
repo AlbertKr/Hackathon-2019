@@ -24,38 +24,35 @@
 </head>
 <body>
 
-<!-- <div id="div_input_search"  style="display: none;"> -->
-            <!-- <input type="text" id="input_search" name="input_search" > -->
-            <!-- <input type="text" id="input_search" name="input_search">
-            <img id="img_search" src="../public/img/input_search.png">
-        </div> -->
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 side">
                 <nav class="navbar">
                     <a class="navbar-brand logo" href="#"><img width="30" height="30" src="../public/img/logo.svg"><strong>Sport</strong>Search</a>
-                    <form class="navbar-form navbar-right inline-form">
-                        <div class="form-group">
-                            <input type="search" class="input-sm form-control" placeholder="Recherche">
-                        </div>
+                    <form class="navbar-form navbar-right inline-form" id="div_input_search_web">
+                        <input type="text" id="input_search_web" name="input_search_web">
+                        <img id="img_search" src="../public/img/input_search.png">
+                    </form>
+                    <form class="navbar-form navbar-right inline-form" id="div_input_search">
+                        <input type="text" id="input_search" name="input_search">
+                        <img id="img_search" src="../public/img/input_search.png">
                     </form>
                     <ul class="nav navbar-nav menu">
                         <li><a href="#" id="search"><i class="icon"><img src="../public/img/search.png"></i></a></li>
-                        <li><a href="#"><i class="icon"><img src="../public/img/all.png" class=""></i><p class="label_responsive">Tous les sports</p></a></li>
-                        <li><a href="#"><i class="icon"><img src="../public/img/foot.png" class=""></i><p class="label_responsive">Football</p></a></li>
-                        <li><a href="#"><i class="icon"><img src="../public/img/rugby.png" class=""></i><p class="label_responsive">Rugby</p></a></li>
-                        <li><a href="#"><i class="icon"><img src="../public/img/basket.png" class=""></i><p class="label_responsive">Basket</p></a></li>
+                        <li><a href="#" style="display:flex; align-items:center;"><i class="icon" ><img src="../public/img/all.png" class=""></i><p class="label_responsive">Tous les sports</p></a></li>
+                        <li><a href="#" style="display:flex; align-items:center;"><i class="icon"><img src="../public/img/foot.png" class=""></i><p class="label_responsive">Football</p></a></li>
+                        <li><a href="#" style="display:flex; align-items:center;"><i class="icon"><img src="../public/img/rugby.png" class=""></i><p class="label_responsive">Rugby</p></a></li>
+                        <li><a href="#" style="display:flex; align-items:center;"><i class="icon"><img src="../public/img/basket.png" class=""></i><p class="label_responsive">Basket</p></a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-10 main" style="display: none;">
+            <div class="col-lg-10 main" id="bulles" style="display: none;">
                 <div>
                     Bulles
                     <!-- TODO : BULLES D3J -->
                 </div>
             </div>
-            <div class="col-lg-10 main">
+            <div class="col-lg-10 main" id="article">
                 <div class="ensemble">
                     <div class="article col-lg-10">
                         <img src="../public/img/didi.png" class="imgArticle">

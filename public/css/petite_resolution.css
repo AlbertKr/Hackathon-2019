@@ -2,8 +2,8 @@
 /* Nouvelles règles si la fenêtre fait au plus 1024px de large */
 @media screen and (max-width: 1024px)
 {
-    #wrapper {
-        position:fixed;
+    .navbar {
+       position:fixed;
         left:0px;
         bottom:0px;
         height:8%;
@@ -12,14 +12,19 @@
         overflow: auto;
         white-space: nowrap;
     }
-
-    #sidebar-wrapper{
+    
+    .menu{
         height: 100%;
+        width: 100%;
         display: flex;
         align-items: center;
     }
 
-    #logo_display{
+    #article, #div_input_search_web{
+        display: none;
+    }
+
+    .logo{
         display:none;
     }
     
@@ -37,6 +42,10 @@
         display : inline-block;
         width : 15%;
         margin-left: 20px;
+    }
+
+    .side{
+        background: #EFEFEF;
     }
 
     .icon{
@@ -57,14 +66,22 @@
         height: 20px;
     }
 
-   #input_search{
+    .navbar-form{
+        display: none;
+    }
+
+    #search{
+        display: block;
+    }
+
+    #input_search{
         border: 0px;
         background: #F5F5F5;
         height: 80%;
     }
 
     #div_input_search{
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: space-around;
         position: fixed;
