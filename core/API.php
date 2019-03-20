@@ -107,7 +107,7 @@ class API {
         $order = "&order[col]=social_score";
         // https://api.ozae.com/gnw/ngrams?date=20190103__20190109&limit=20&key=11116dbf000000000000960d2228e999&query=brexit&edition=fr-fr&topic=w
         $url= $this->url.$uri.$date.$limit.$this->key.$topic;
-        debug($url,true);
+        // debug($url,true);
         $timeout = 10; 
         
         $ch = curl_init($url); 
