@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <title>SportsSearch</title>
 
+    <link rel="icon" href="../public/img/logo.ico">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css" />
 
@@ -22,68 +23,63 @@
 
 </head>
 <body>
-    <div>
-        <div id="div_input_search"  style="display: none;">
+
+<!-- <div id="div_input_search"  style="display: none;"> -->
             <!-- <input type="text" id="input_search" name="input_search" > -->
-            <input type="text" id="input_search" name="input_search">
+            <!-- <input type="text" id="input_search" name="input_search">
             <img id="img_search" src="../public/img/input_search.png">
-        </div>
-            <div id="wrapper">
-                <!-- Sidebar -->
-                <div id="sidebar-wrapper">
-                    <ul class="sidebar-nav">
-                        <li id="logo_display" class="sidebar-brand">
-                            <a href="#">
-                                Logo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" id="search">
-                            <i class="icon"><img src="../public/img/search.png"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <i class="icon"><img src="../public/img/all.png"></i>
-                                <p class="label_responsive">Tous les sports</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon"><img src="../public/img/foot.png"></i>
-                                <p class="label_responsive">Football</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <i class="icon"><img src="../public/img/rugby.png"></i>
-                                <p class="label_responsive">Rugby</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <i class="icon"><img src="../public/img/basket.png"></i>
-                                <p class="label_responsive">Basket</p>
-                            </a>
-                        </li>
+        </div> -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 side">
+                <nav class="navbar">
+                    <a class="navbar-brand logo" href="#"><img width="30" height="30" src="../public/img/logo.svg"><strong>Sport</strong>Search</a>
+                    <form class="navbar-form navbar-right inline-form">
+                        <div class="form-group">
+                            <input type="search" class="input-sm form-control" placeholder="Recherche">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav menu">
+                        <li><a href="#" id="search"><i class="icon"><img src="../public/img/search.png"></i></a></li>
+                        <li><a href="#"><i class="icon"><img src="../public/img/all.png" class=""></i><p class="label_responsive">Tous les sports</p></a></li>
+                        <li><a href="#"><i class="icon"><img src="../public/img/foot.png" class=""></i><p class="label_responsive">Football</p></a></li>
+                        <li><a href="#"><i class="icon"><img src="../public/img/rugby.png" class=""></i><p class="label_responsive">Rugby</p></a></li>
+                        <li><a href="#"><i class="icon"><img src="../public/img/basket.png" class=""></i><p class="label_responsive">Basket</p></a></li>
                     </ul>
+                </nav>
+            </div>
+            <div class="col-lg-10 main" style="display: none;">
+                <div>
+                    Bulles
+                    <!-- TODO : BULLES D3J -->
                 </div>
             </div>
-    </div>
-    
-    <div >
-        <p>Bulles</p>
-        <!-- TODO : BULLES D3J -->
-    </div>
-    <div style="display: none;">
-        <ul class="sidebar-nav">
-            <li>
-                <p>Article n°1</p><h3>Title</h3><img>
-            </li>
-            <li>
-                <p>Article n°2</p><h3>Title</h3><img>
-            </li>
-        </ul>
+            <div class="col-lg-10 main">
+                <div class="ensemble">
+                    <div class="article col-lg-10">
+                        <img src="../public/img/didi.png" class="imgArticle">
+                        <h4>PSG - OM (3-1) : Didier Deschamps réagit sur le comportement de Kylian Mbappé</h4>
+                        <h5 class="content">But! Football Club - Il y a 3 heures 18/03/2019</h5>
+                        <h5 class="ngrams">Mbappé : 20  Neymar : 18  Ligue 1 : 15  Didier Deschamps : 14</h5>
+                    </div>
+                    <div class="article col-lg-10">
+                        <img src="../public/img/didi.png" class="imgArticle">
+                        <h4>PSG - OM (3-1) : Didier Deschamps réagit sur le comportement de Kylian Mbappé</h4>
+                        <h5 class="content">But! Football Club - Il y a 3 heures 18/03/2019</h5>
+                        <h5 class="ngrams">Mbappé : 20  Neymar : 18  Ligue 1 : 15  Didier Deschamps : 14</h5>
+                    </div>
+                    <div class="article col-lg-10">
+                        <img src="../public/img/didi.png" class="imgArticle">
+                        <h4>PSG - OM (3-1) : Didier Deschamps réagit sur le comportement de Kylian Mbappé</h4>
+                        <h5 class="content">But! Football Club - Il y a 3 heures 18/03/2019</h5>
+                        <h5 class="ngrams">Mbappé : 20  Neymar : 18  Ligue 1 : 15  Didier Deschamps : 14</h5>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
     </div>
 </body>
 
