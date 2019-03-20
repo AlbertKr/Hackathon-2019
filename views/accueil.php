@@ -30,7 +30,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2 side">
+            <div class="col-2 side">
                 <nav class="navbar">
                     <a class="navbar-brand logo" href="defaut"><img width="35" height="35" src="../public/img/logo.svg"><strong>Sport</strong>Search</a>
                     <form class="navbar-form navbar-right inline-form" id="div_input_search_web">
@@ -50,26 +50,26 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-10 main" id="bulles">
+            <div class="col-10 main" id="bulles" style="display: none;">
             </div>
-            <div class="col-lg-10 main" id="article" style="display: none;">
+            <div class="col-10 main" id="article">
                 <div class="fond_blanc" style="display: none;width: 100%;height: 100%;position: absolute;z-index: 1;align-content: center;justify-content: center;">
                     <img src="../public/img/loading.gif" class=".dialog-animation" style="margin: auto;height: 50%;">
                 </div>
                 <div class="ensemble">
-                    <div class="article col-lg-10">
+                    <div class="article col-12">
                         <img src="../public/img/didi.png" class="imgArticle">
                         <h4>PSG - OM (3-1) : Didier Deschamps réagit sur le comportement de Kylian Mbappé</h4>
                         <h5 class="content">But! Football Club - Il y a 3 heures 18/03/2019</h5>
                         <h5 class="ngrams">Mbappé : 20  Neymar : 18  Ligue 1 : 15  Didier Deschamps : 14</h5>
                     </div>
-                    <div class="article col-lg-10">
+                    <div class="article col-12">
                         <img src="../public/img/didi.png" class="imgArticle">
                         <h4>PSG - OM (3-1) : Didier Deschamps réagit sur le comportement de Kylian Mbappé</h4>
                         <h5 class="content">But! Football Club - Il y a 3 heures 18/03/2019</h5>
                         <h5 class="ngrams">Mbappé : 20  Neymar : 18  Ligue 1 : 15  Didier Deschamps : 14</h5>
                     </div>
-                    <div class="article col-lg-10">
+                    <div class="article col-12">
                         <img src="../public/img/didi.png" class="imgArticle">
                         <h4>PSG - OM (3-1) : Didier Deschamps réagit sur le comportement de Kylian Mbappé</h4>
                         <h5 class="content">But! Football Club - Il y a 3 heures 18/03/2019</h5>
@@ -132,9 +132,7 @@ var svg = d3.select("#bulles")
     .attr("width", diameter)
     .attr("height", diameter)
     .attr("class", "bubble")
-    .style("margin", "auto")
-    .style("display", "block")
-    .style("margin-top", "30");
+    .style("display", "block");
 
 var nodes = d3.hierarchy(dataset)
     .sum(function(d) { return d.Count; });
